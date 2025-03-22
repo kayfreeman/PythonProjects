@@ -1,0 +1,46 @@
+Project Summary: Infrastructure Security Incident Response and Mitigation
+--------------------------------------------------------------------------
+This project is a simulation project from Telstra Australia on Forage a virtual internship platform. 
+The Project focuses on the detection, analysis, and mitigation of a malware attack targeting critical infrastructure services running on Spring Framework 5.3.0. The attack specifically exploited vulnerabilities within Tomcat servers to gain unauthorized access and execute malicious commands.
+
+The Primary Target
+--------------------
+The NBN Connection service (nbn.external.network), which provides high-speed internet services. Secondary impacts were observed in related infrastructure components, including Mobile Tower Connection, Home & Business Lines, and ADSL Connect services. The attack posed significant risks to network availability, customer connectivity, and business operations.
+
+Key Objectives
+---------------
+- Incident Detection & Analysis – Identify attack vectors, assess vulnerabilities, and understand the root cause of the exploitation.
+- Infrastructure Impact Assessment – Determine the extent of service disruptions and affected business operations.
+- Mitigation & Response Actions – Apply immediate patches, block malicious activity, and enhance monitoring capabilities.
+- Security Hardening & Prevention – Implement improved vulnerability management, real-time monitoring, and access control measures to prevent future incidents.
+- Postmortem & Lessons Learned – Document findings, analyze response effectiveness, and define corrective measures for long-term infrastructure security improvements.
+
+The Python server firewall code therefore provides insight on real-time network traffic monitoring, filtering, and blocking of suspicious activity. 
+
+Key Features & Functionalities
+-------------------------------
+- Packet Inspection & Logging
+The script captures incoming network packets using a network monitoring library (e.g., scapy or socket module).
+It inspects packet headers to identify source/destination addresses, ports, and protocol types.
+Logs potentially malicious or unauthorized traffic for further analysis.
+
+- IP Address Blacklisting & Rule Enforcement
+The firewall maintains a blacklist of known malicious IPs.
+If a packet originates from a blacklisted IP, the firewall drops the request.
+Can dynamically update the blacklist based on real-time threat detection.
+
+- Port & Protocol Filtering
+Blocks unauthorized access attempts to critical services by restricting specific ports and protocols.
+For example, it may allow HTTPS (443) while blocking unused or vulnerable ports.
+
+- Rate Limiting & DoS Protection
+Implements rate-limiting mechanisms to detect and prevent excessive traffic from a single source (helpful against DDoS attacks).
+Identifies and blocks repetitive failed connection attempts.
+
+- Alerting & Notifications
+Sends alerts when suspicious activity is detected (e.g., multiple failed login attempts or traffic from a known threat actor).
+Can integrate with email notifications, logging systems, or SIEM solutions.
+
+- Automated Response & Mitigation
+Upon detecting an attack pattern, the script may automatically modify firewall rules to block ongoing threats.
+Could integrate with iptables (Linux) or Windows Firewall APIs to enforce security policies dynamically.
